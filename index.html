@@ -1,0 +1,210 @@
+<html>
+    <head>
+        <title>
+            Product Preview
+        </title>
+        </head>
+        <style>
+            .container{
+                height: 580px;
+                width:900px;
+                background-color: #fff;
+                display: block;
+                padding: 2px;
+                margin: 50px auto;
+                border: none;
+                border-radius: 25px;
+                box-shadow: 0px 0px 20px 2px #272727;
+                font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            .para-content{
+                display: block;
+                margin-left: 490px;
+                
+            }
+            .para{
+              
+                font-size: 30px;
+                margin-top: -15px;
+                
+            }
+            .main-image{
+                height:350px;
+                width: 300px;
+                margin-top: -400px;
+                margin-left: 5px;
+            }
+            .other-img-container{
+                margin-left: 500px;
+                margin-top: -30px;
+            }
+            .other-img{
+                height: 60px;
+                width: 60px;
+                border: 2px solid black;
+               margin-left: -150px;
+               margin-top: 40px;
+                border-radius: 10px;
+            }
+            .quantity-main{
+                display: flex;
+                margin-left: 10px;
+                
+            }
+            .quantity-container{
+                display: flex;
+                margin-left: 480px;
+                margin-top:-2px;
+                height: 30px;
+                width: 110px;
+                font-size: 20px;
+            }
+            .drop-img{
+                cursor: pointer;
+                height: 20px;
+                width: 20px;
+            }
+            .btn-container{
+                display: block;
+                margin-left: 500px;
+                
+            }
+            .btn{
+               
+                height: 50px;
+                width: 80px;
+                cursor: pointer;
+                border: none;
+                border-radius: 10px;
+                font-size: 15px;
+                background-color: rgb(253, 253, 253);
+                box-shadow: 0 0px 5px 1px #000;
+                
+            }
+            .plus{
+                margin-left: -10px;
+                font-size: 40px;
+                }
+                .minus{
+                margin-left: 60px;
+                 font-size: 40px;
+                }
+             .addtocart{
+                margin-left: 490px;
+                margin-top: -60px;
+                 width: 400px;
+                background-color: rgb(0, 0, 0);
+                color: #fff;
+                text-align: center;
+                padding: 20px 10px;
+                border: none;
+                font-size:20px;
+                border-radius: 20px;
+                cursor: pointer;
+             }
+            .zero
+            {
+              font-size: 40px;
+            margin-left: 70px;
+           
+            }
+           
+        </style>
+        <body>   
+
+                <div class="container">
+                <div class="para-content">  
+               <h4 >
+                Womens footwear collection/ Women's heels
+               </h4>
+               <p class="para">
+                Gabbana Versatile Block Heels
+               </p>
+               <p 
+               style="margin-top: -30px; font-size: 60px;" >
+                ₹ 1,999
+               </p>
+               <br>
+               <h2 
+               style="margin-left:200px; margin-top: -120px; font-size: 15px; color: grey;">[Inclusive all taxes]
+               </h2>
+               <h2>
+                Description
+               </h2>
+               <p>
+                SOLE MATERIAL: TUNIT
+                <br>
+                INSOLE MATERIAL: PU Moldes
+                <br>
+                CLOSURE: Buckle Strap
+                <br>
+                FIT TYPE: Regular
+                <br>
+                SHOE WIDTH: Medium
+                <br>
+                HEEL TYPE: Block
+                <br>
+                HEEL HEIGHT: 6.35 cm (2.5 inches)
+                <br>
+                MATERIAL TYPE: Synthetic Leather
+                 <br>
+                COUNTRY OF ORIGIN: India
+               </p>
+               </div>
+                <img src="./1.webp" class="main-image" id="nxtImg">
+
+                <div class="btn-container">
+                <button class="btn plus" id="add" onclick="increase()">
+                   +
+                </button>
+                <span id="amount" class=" zero">
+                   0
+                </span>
+                <button class="btn minus" id="minus" onclick="decrease()">
+                   -
+                </button>
+            </div>
+                <div class="other-img-container"> 
+                
+                <img src="./2.webp" class="other-img" onclick="changeImage(`2.webp`)">
+                <img src="./3.webp" class="other-img"  onclick="changeImage(`3.webp`)">
+                <img src="./4.webp" class="other-img"  onclick="changeImage(`4.webp`)">
+                <img src="./5.webp" class="other-img"  onclick="changeImage(`5.webp`)">
+                <img src="./6.webp" class="other-img"  onclick="changeImage(`6.webp`)">
+
+            </div>
+           
+                <button class="addtocart">
+
+<b>
+        Add to cart
+
+</b>
+                </button>
+    
+            </div>
+            <script>
+                function changeImage(nxtImg){
+                    const mainImage=document.getElementById(`nxtImg`);
+                    mainImage.src=nxtImg;
+                }
+                
+                const amountElement=document.getElementById("amount");
+                let amount=parseInt(amountElement.innerText);
+
+ function increase(){
+     if ( amount>9)
+    return
+            
+amountElement.innerText= ++amount;
+}
+ function decrease(){
+    if ( amount<=0)
+    return
+amountElement.innerText=--amount;
+}
+
+
+            </script>
+        </body>
+</html>
